@@ -1,14 +1,30 @@
 import React, {Fragment,useState, useEffect}from 'react';
 
-const  ScroolHooks=()=>{
+const  RelojFuncional=()=>{
+  const [hour,setHour]=useState(new Date().toLocaleTimeString())
+  const [visible,setVisible]=useState(false)
+
   useEffect(()=>{
-    console.log('fase de montaje')
-  })
+    let temporizador;
+    if(visible){
+      temporizador=setInterval(()=>{
+        setHour(new Date().toLocaleTimeString())
+      },1000)
+    }
+      return ()=>{
+        console.log('fase de descontaje')
+        clearInterval(temporizador)
+    }
+  },[visible])
+
   return(
     <Fragment>
-      <h2>Hooks UseEffect y el ciclo de vida</h2>
+      <h2>Reloj</h2>
+      {visible&&<h3>{hour}</h3>}
+      <button onClick={()=>setVisible(true)}>Iniciar</button>
+      <button onClick={()=>setVisible(false)}>detener</button>
     </Fragment>
 )
 }
 
-export default  ScroolHooks
+export default  RelojFuncional

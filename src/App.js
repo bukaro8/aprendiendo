@@ -13,17 +13,17 @@ function App() {
   return (
     <div className="App">
       <ScroolHooks/>
-      <UseSate titulo='hola'/>
-      {/* <PeticionesAsync/> */}
-      {/* <CicloVida/> */}
-        {/* <RenderiazadoCondicional/> */}
+      {/* <UseSate titulo='hola'/>
+      <PeticionesAsync/>
+      <CicloVida/>
+        <RenderiazadoCondicional/>
       <hr/>
-      {/* <RenderizadoElementos/> */}
+      <RenderizadoElementos/>
       <hr/>
-      {/* <EventosEs6/>
-      <EventosEs7/>  */}
+      * <EventosEs6/>
+      <EventosEs7/>  *
       <hr/> 
-      {/* <ComunicacionComponentes/> */}
+      <ComunicacionComponentes/> */}
     </div>
   );
 }
